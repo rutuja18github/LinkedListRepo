@@ -14,6 +14,7 @@ public class App {
 		MyLinkedList list = new MyLinkedList();
 		list.addData();
 		list.addDataToTop();
+		list.appendList();
 
 	}
 }

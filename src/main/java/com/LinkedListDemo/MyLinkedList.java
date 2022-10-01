@@ -7,7 +7,7 @@ public class MyLinkedList {
 	LinkedList<Integer> listObject;
 	private static final Logger logger = LogManager.getLogger(MyLinkedList.class);
 
-	void addData() {
+	public void addData() {
 		listObject = new LinkedList<>();
 		listObject.addNode(56);
 		listObject.addNode(30);
@@ -15,11 +15,18 @@ public class MyLinkedList {
 		listObject.display();
 	}
 
-	void addDataToTop() {
+	public void addDataToTop() {
 		listObject = new LinkedList<>();
 		listObject.insertAtTop(70);
 		listObject.insertAtTop(30);
 		listObject.insertAtTop(56);
+		logger.info(listObject);
+	}
+	public void appendList() {
+		listObject = new LinkedList<>();
+		listObject.append(56);
+		listObject.append(30);
+		listObject.append(70);
 		logger.info(listObject);
 	}
 }

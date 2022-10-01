@@ -41,6 +41,26 @@ public class LinkedList<T> {
 		}
 	}
 
+	// To append node at the end of List
+	void append(T data) {
+		Node<T> node = new Node<>(data); // Creating new node with given value
+
+		// Checking if list is empty and assigning new value to head node.
+		if (this.head == null) {
+			head = node;
+		}
+
+		// If list already exists
+		else {
+			Node<T> temp = head; // Temporary node for traversal
+			// Iterating till end of the List
+			while (temp.next != null) {
+				temp = temp.next;
+			}
+			temp.next = node; // Adding new valued node at the end of the list
+		}
+	}
+
 	// method will display all the nodes present in the list
 	public void display() {
 		// temp will point to head
@@ -55,24 +75,24 @@ public class LinkedList<T> {
 			temp = temp.next;
 		}
 	}
+
 	// To display the LinkedList
-    //@Override
-    public String toString()
-    {
- 
-        String S="";
- 
-        Node<T> temp = head;
- 
-        if (temp == null)
-            return S;
- 
-        while (temp.next != null) {
-            S += String.valueOf(temp.data) + " -> ";
-            temp = temp.next;
-        }
- 
-        S += String.valueOf(temp.data);
-        return S;
-    }
+	// @Override
+	public String toString() {
+
+		String S = "";
+
+		Node<T> temp = head;
+
+		if (temp == null)
+			return S;
+
+		while (temp.next != null) {
+			S += String.valueOf(temp.data) + " -> ";
+			temp = temp.next;
+		}
+
+		S += String.valueOf(temp.data);
+		return S;
+	}
 }
