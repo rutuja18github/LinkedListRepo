@@ -142,6 +142,26 @@ public class LinkedList<T> {
 		return null;
 	}
 
+	//o find index of given element
+	public int index(T data) {
+		int index=1;
+		Node<T> temp = head;
+		if (head == null) {
+			return -1;//if list is empty
+		}
+
+		// While loop is used to search the entire Linked
+		while (temp != null) {
+
+			// Returns the index of that particular element,if found.
+			if (temp.data == data) {
+				return index;
+			}
+			index++;
+			temp = temp.next;
+		}
+		return -1;// Returns -1 if the element is not found
+	}
 	// method will display all the nodes present in the list
 	public void display() {
 		// temp will point to head

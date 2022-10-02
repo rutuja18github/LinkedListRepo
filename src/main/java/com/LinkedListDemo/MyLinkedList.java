@@ -7,6 +7,7 @@ public class MyLinkedList {
 	LinkedList<Integer> listObject;
 	private static final Logger logger = LogManager.getLogger(MyLinkedList.class);
 
+	// simple list add element
 	public void addData() {
 		listObject = new LinkedList<>();
 		listObject.addNode(56);
@@ -15,6 +16,7 @@ public class MyLinkedList {
 		listObject.display();
 	}
 
+	// add element at top
 	public void addDataToTop() {
 		listObject = new LinkedList<>();
 		listObject.insertAtTop(70);
@@ -23,6 +25,7 @@ public class MyLinkedList {
 		logger.info(listObject);
 	}
 
+	// append element
 	public void appendList() {
 		listObject = new LinkedList<>();
 		listObject.append(56);
@@ -31,6 +34,7 @@ public class MyLinkedList {
 		logger.info(listObject);
 	}
 
+	// insert node at given position
 	public void insertNode() {
 		listObject = new LinkedList<>();
 		listObject.append(56);
@@ -41,6 +45,7 @@ public class MyLinkedList {
 		logger.info(listObject);
 	}
 
+	// delete node at top of list
 	public void popFront() {
 		listObject = new LinkedList<>();
 		listObject.append(56);
@@ -52,6 +57,7 @@ public class MyLinkedList {
 		logger.info(listObject);
 	}
 
+	// Delete node at end
 	public void deleteFromEnd() {
 		listObject = new LinkedList<>();
 		listObject.append(56);
@@ -63,6 +69,7 @@ public class MyLinkedList {
 		logger.info(listObject);
 	}
 
+	// Search Element
 	public void searchElement() {
 		listObject = new LinkedList<>();
 		listObject.append(56);
@@ -76,6 +83,23 @@ public class MyLinkedList {
 			logger.info("Element present in linked list ");
 
 		}
+	}
+
+	// Insert Element After Given Element
+	public void insertAfterElement() {
+		listObject = new LinkedList<>();
+		listObject.append(56);
+		listObject.append(30);
+		listObject.append(70);
+		logger.info(listObject);
+		int position = listObject.index(30);
+		if (position == -1) {
+			logger.info("Element Not Found");
+		} else {
+			listObject.insert(position + 1, 40);
+		}
+		logger.info(listObject);
+
 	}
 
 }

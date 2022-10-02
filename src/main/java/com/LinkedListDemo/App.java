@@ -19,6 +19,7 @@ public class App {
 		list.popFront();
 		list.deleteFromEnd();
 		list.searchElement();
+		list.insertAfterElement();
 		
 
 	}
