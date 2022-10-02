@@ -8,7 +8,6 @@ public class LinkedList<T> {
 	Node<T> head;
 	Node<T> temp;
 	int position = 0;
-
 	public void addNode(T data) {
 		// Create a new node
 		Node<T> newNode = new Node<>(data);
@@ -167,10 +166,21 @@ public class LinkedList<T> {
 		// Unlink the node from linked list
 		prev.next = temp.next;
 		return true;
-		
-	}
 
-	// o find index of given element
+	}
+	
+	//returns size of the linked list
+	  public int size() {
+	    int length = 0;
+	    Node<T> temp = head;
+	    while (temp != null) {
+	      temp = temp.next;
+	      length++;
+	    }
+	    return length;
+	  }
+
+	//To find index of given element
 	public int index(T data) {
 		int index = 1;
 		Node<T> temp = head;

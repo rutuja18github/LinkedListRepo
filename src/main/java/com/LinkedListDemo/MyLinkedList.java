@@ -98,5 +98,6 @@ public class MyLinkedList {
 			logger.info("Element is delete from list");
 			logger.info(listObject);
 		}
+		logger.info("Linked list size"+listObject.size());
 	}
 }
