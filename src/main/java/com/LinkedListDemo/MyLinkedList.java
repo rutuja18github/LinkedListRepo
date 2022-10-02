@@ -47,11 +47,7 @@ public class MyLinkedList {
 
 	// delete node at top of list
 	public void popFront() {
-		listObject = new LinkedList<>();
-		listObject.append(56);
-		listObject.append(30);
-		listObject.append(70);
-		logger.info(listObject);
+		appendList();
 		listObject.pop();
 		logger.info("printing list after deleting first node");
 		logger.info(listObject);
@@ -59,11 +55,7 @@ public class MyLinkedList {
 
 	// Delete node at end
 	public void deleteFromEnd() {
-		listObject = new LinkedList<>();
-		listObject.append(56);
-		listObject.append(30);
-		listObject.append(70);
-		logger.info(listObject);
+		appendList();
 		listObject.popLast();
 		logger.info("printing list after deleting last node");
 		logger.info(listObject);
@@ -71,12 +63,8 @@ public class MyLinkedList {
 
 	// Search Element
 	public void searchElement() {
-		listObject = new LinkedList<>();
-		listObject.append(56);
-		listObject.append(30);
-		listObject.append(70);
-		logger.info(listObject);
-		Node<Integer> node = listObject.search(80);
+		appendList();
+		Node<Integer> node = listObject.search(30);
 		if (node == null) {
 			logger.info("Element Not Found");
 		} else {
@@ -87,11 +75,7 @@ public class MyLinkedList {
 
 	// Insert Element After Given Element
 	public void insertAfterElement() {
-		listObject = new LinkedList<>();
-		listObject.append(56);
-		listObject.append(30);
-		listObject.append(70);
-		logger.info(listObject);
+		appendList();
 		int position = listObject.index(30);
 		if (position == -1) {
 			logger.info("Element Not Found");
@@ -99,7 +83,20 @@ public class MyLinkedList {
 			listObject.insert(position + 1, 40);
 		}
 		logger.info(listObject);
-
 	}
-
+	public void deleteElement() {
+		listObject = new LinkedList<>();
+		listObject.append(56);
+		listObject.append(30);
+		listObject.append(40);
+		listObject.append(70);
+		logger.info(listObject);
+		boolean result=listObject.deleteNode(40);
+		if (result==false) {
+			logger.info("Element Not Found");
+		} else {
+			logger.info("Element is delete from list");
+			logger.info(listObject);
+		}
+	}
 }

@@ -20,6 +20,7 @@ public class App {
 		list.deleteFromEnd();
 		list.searchElement();
 		list.insertAfterElement();
+		list.deleteElement();
 		
 
 	}

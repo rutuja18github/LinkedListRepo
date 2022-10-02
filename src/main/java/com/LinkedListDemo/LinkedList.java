@@ -88,7 +88,7 @@ public class LinkedList<T> {
 	}
 
 	// Delete first node of the list
-	void pop() {
+	public void pop() {
 		if (this.head != null) {
 			Node<T> temp = this.head;
 			this.head = this.head.next;// move head to next of head
@@ -142,12 +142,40 @@ public class LinkedList<T> {
 		return null;
 	}
 
-	//o find index of given element
+	public boolean deleteNode(T data) {
+		// Store head node
+		Node<T> temp = head, prev = null;
+
+		// If head node itself holds the data to be deleted
+		if (temp != null && temp.data == data) {
+			head = temp.next;
+			return true;
+		}
+
+		// Search for the element to be deleted, keep track of
+		// the previous node as we need to change temp.next
+		while (temp != null && temp.data != data) {
+			prev = temp;
+			temp = temp.next;
+		}
+
+		// If data was not present in linked list
+		if (temp == null) {
+			return false;
+		}
+
+		// Unlink the node from linked list
+		prev.next = temp.next;
+		return true;
+		
+	}
+
+	// o find index of given element
 	public int index(T data) {
-		int index=1;
+		int index = 1;
 		Node<T> temp = head;
 		if (head == null) {
-			return -1;//if list is empty
+			return -1;// if list is empty
 		}
 
 		// While loop is used to search the entire Linked
@@ -162,6 +190,7 @@ public class LinkedList<T> {
 		}
 		return -1;// Returns -1 if the element is not found
 	}
+
 	// method will display all the nodes present in the list
 	public void display() {
 		// temp will point to head
