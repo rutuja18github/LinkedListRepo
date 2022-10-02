@@ -8,6 +8,14 @@ public class Queue<T> {
 	public void enqueue(T item) {
 		LinkedList.append(item);
 	}
+
+	// remove first element from queue.call linked list pop method.
+	public Object dequeue() {
+		front = LinkedList.head;
+		LinkedList.pop();
+		return front.data;
+	}
+
 	// print the queue
 	public void printQueue() {
 		LinkedList.display();
