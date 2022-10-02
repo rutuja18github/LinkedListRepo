@@ -29,4 +29,14 @@ public class MyLinkedList {
 		listObject.append(70);
 		logger.info(listObject);
 	}
+	public void insertNode() {
+		listObject = new LinkedList<>();
+        listObject.append(56);
+        listObject.append(70);
+        logger.info(listObject);
+        listObject.insert(2,30);
+        logger.info("printing list after inserting node at given position");
+        logger.info(listObject);
+    }
+	
 }

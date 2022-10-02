@@ -15,6 +15,7 @@ public class App {
 		list.addData();
 		list.addDataToTop();
 		list.appendList();
+		list.insertNode();
 
 	}
 }
