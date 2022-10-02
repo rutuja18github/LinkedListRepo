@@ -98,7 +98,7 @@ public class MyLinkedList {
 			logger.info("Element is delete from list");
 			logger.info(listObject);
 		}
-		logger.info("Linked list size"+listObject.size());
+		logger.info("Linked list size "+listObject.size());
 	}
 	public void orderdList() {
 		SortedLinkedList<Integer> orderedList= new SortedLinkedList<>();
@@ -116,10 +116,10 @@ public class MyLinkedList {
         logger.info("printing elements in stack");
         stack.printStack();
         logger.info("peeking stack");
-        int top=(int)stack.peek();
-        logger.info("Element at the top of stack "+top);
-        stack.pop();
+        int topAtElement=(int)stack.peek();
+        logger.info("Element at the top of stack "+topAtElement);
         logger.info("poping first item from stack");
+        stack.pop();
         stack.printStack();
 	}
 }

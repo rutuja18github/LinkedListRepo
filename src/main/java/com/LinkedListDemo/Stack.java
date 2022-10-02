@@ -1,6 +1,10 @@
 package com.linkedlistdemo;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Stack<T> {
+	private static final Logger logger = LogManager.getLogger(Stack.class);
 	LinkedList<T> linkedList=new LinkedList<T>();
 	Node<T> top;
 	public Stack() {
@@ -11,10 +15,10 @@ public class Stack<T> {
 	}
 	public void pop() {
 	    linkedList.pop();
-	    top = linkedList.head;
+	    top = linkedList.head; 
 	  }
 	public T peek() {
-
+		top = linkedList.head; 
         // check for empty stack
         if (!isEmpty()) {
             return top.data;
