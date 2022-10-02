@@ -12,11 +12,12 @@ public class App {
 	public static void main(String[] args) {
 		logger.info("Welcome to implemented LinkedList");
 		MyLinkedList list = new MyLinkedList();
-		/*list.addData();
+		list.addData();
 		list.addDataToTop();
 		list.appendList();
-		list.insertNode();*/
+		list.insertNode();
 		list.popFront();
+		list.deleteFromEnd();
 		
 
 	}

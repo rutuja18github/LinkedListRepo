@@ -46,8 +46,17 @@ public class MyLinkedList {
         logger.info(listObject);
         listObject.pop();
         logger.info("printing list after deleting first node");
-        logger.info(listObject);
-        
-		
+        logger.info(listObject); 	
 	}
+	public void deleteFromEnd() {
+		listObject = new LinkedList<>();
+        listObject.append(56);
+        listObject.append(30);
+        listObject.append(70);
+        logger.info(listObject);
+        listObject.popLast();
+        logger.info("printing list after deleting last node");
+        logger.info(listObject); 	
+	}
+	
 }

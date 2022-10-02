@@ -3,8 +3,6 @@ package com.LinkedListDemo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.LinkedListDemo.LinkedList;
-
 public class LinkedList<T> {
 	private static final Logger logger = LogManager.getLogger(LinkedList.class);
 	Node<T> head;
@@ -89,14 +87,39 @@ public class LinkedList<T> {
 		prev.next.next = temp; // new value now points to former current node
 	}
 
-	//Delete first node of the list
-	  void pop() {
-	    if(this.head != null) {
-	    	Node<T> temp = this.head;
-	      this.head = this.head.next;
-	      temp = null;  
-	    }
-	  }
+	// Delete first node of the list
+	void pop() {
+		if (this.head != null) {
+			Node<T> temp = this.head;
+			this.head = this.head.next;// move head to next of head
+			temp = null;// delete node
+		}
+	}
+
+	public void popLast() {
+		Node<T> temp = head;
+		Node<T> tail = head.next;
+		// Checks if the list is empty
+		if (head == null) {
+			logger.info("List is empty");
+			return;
+		}
+		//to remove last element of list if list contain more than one element
+		while (temp != null && tail != null) {
+			//once tail.next becomes null change second last node as tail
+			if (tail.next == null) {
+				tail = temp;
+				//remove last element
+				temp.next=null;
+			}
+			tail = tail.next;
+			temp = temp.next;
+		}
+		//if list contains only one element
+		if (head.next == null)
+			tail = head;
+		return;
+	}
 
 	// method will display all the nodes present in the list
 	public void display() {
