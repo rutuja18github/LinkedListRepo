@@ -88,21 +88,15 @@ public class LinkedList<T> {
 		prev.next = new Node<T>(data); // previous node now points to new value
 		prev.next.next = temp; // new value now points to former current node
 	}
-	
-	// To remove a node from list
-	void delete(T data)
-    {
-		Node<T> temp = head;
-		// If node was not present in linked list
-        if (temp == null)
-            return;
- 
-        // If head node itself holds the key to be deleted
-        if (temp != null && temp.data == data) {
-            head = temp.next; // Changed head
-            return;
-        }
-    }
+
+	//Delete first node of the list
+	  void pop() {
+	    if(this.head != null) {
+	    	Node<T> temp = this.head;
+	      this.head = this.head.next;
+	      temp = null;  
+	    }
+	  }
 
 	// method will display all the nodes present in the list
 	public void display() {

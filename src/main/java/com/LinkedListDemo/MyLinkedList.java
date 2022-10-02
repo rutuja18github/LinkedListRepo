@@ -38,14 +38,14 @@ public class MyLinkedList {
         logger.info("printing list after inserting node at given position");
         logger.info(listObject);
     }
-	public void deleteNode() {
+	public void popFront() {
 		listObject = new LinkedList<>();
         listObject.append(56);
         listObject.append(30);
         listObject.append(70);
         logger.info(listObject);
-        listObject.delete(56);
-        logger.info("printing list after deleting node at given position");
+        listObject.pop();
+        logger.info("printing list after deleting first node");
         logger.info(listObject);
         
 		
