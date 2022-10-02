@@ -8,6 +8,7 @@ public class LinkedList<T> {
 	Node<T> head;
 	Node<T> temp;
 	int position = 0;
+	
 	public void addNode(T data) {
 		// Create a new node
 		Node<T> newNode = new Node<>(data);
@@ -235,4 +236,5 @@ public class LinkedList<T> {
 		S += String.valueOf(temp.data);
 		return S;
 	}
+
 }

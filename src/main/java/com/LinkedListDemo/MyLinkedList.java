@@ -106,6 +106,15 @@ public class MyLinkedList {
 		orderedList.add(30);
 		orderedList.add(40);
 		orderedList.add(70);
-		System.out.println(orderedList);
+		logger.info(orderedList);
+	}
+	public void implementStack() {
+		Stack<Integer> stack=new Stack<>();
+        logger.info("initialized stack");
+        stack.push(70);
+        stack.push(30);
+        stack.push(56);
+        logger.info("printing pushed items in stack");
+        stack.printStack();
 	}
 }
