@@ -28,7 +28,7 @@ public class LinkedList<T> {
 		}
 	}
 
-	void insertAtTop(T data) {
+	public void insertAtTop(T data) {
 		Node<T> node = new Node<T>(data);
 		node.data = data;
 		node.next = null;
@@ -43,7 +43,7 @@ public class LinkedList<T> {
 	}
 
 	// To append node at the end of List
-	void append(T data) {
+	public void append(T data) {
 		Node<T> node = new Node<>(data); // Creating new node with given value
 
 		// Checking if list is empty and assigning new value to head node.
@@ -62,9 +62,9 @@ public class LinkedList<T> {
 		}
 		position++;
 	}
-	
+
 	// To add new node at any given position
-	void insert(int index, T data) {
+	public void insert(int index, T data) {
 		// Checking if position is valid
 		if (index > position + 1) {
 			logger.info("Position Unavailable in LinkedList");
@@ -72,22 +72,37 @@ public class LinkedList<T> {
 		}
 		// If new position is head then replace head node
 		if (index == 1) {
-			Node<T> temp = head;      // Temporary node that stores previous head
+			Node<T> temp = head; // Temporary node that stores previous head
 			head = new Node<T>(data); // New valued node stored in head
-			head.next = temp;         // New head node pointing to old head node
+			head.next = temp; // New head node pointing to old head node
 			return;
 		}
-		Node<T> temp = head;          // Temporary node for traversal
+		Node<T> temp = head; // Temporary node for traversal
 		Node<T> prev = new Node<T>(null);// Dummy node with null value that stores previous
 		// iterating to the given position
 		while (index - 1 > 0) {
-			prev = temp;     // assigning previous node
+			prev = temp; // assigning previous node
 			temp = temp.next;// incrementing next node
 			index--;
 		}
-		prev.next = new Node<T>(data);	// previous node now points to new value
-		prev.next.next = temp;          // new value now points to former current node
+		prev.next = new Node<T>(data); // previous node now points to new value
+		prev.next.next = temp; // new value now points to former current node
 	}
+	
+	// To remove a node from list
+	void delete(T data)
+    {
+		Node<T> temp = head;
+		// If node was not present in linked list
+        if (temp == null)
+            return;
+ 
+        // If head node itself holds the key to be deleted
+        if (temp != null && temp.data == data) {
+            head = temp.next; // Changed head
+            return;
+        }
+    }
 
 	// method will display all the nodes present in the list
 	public void display() {
