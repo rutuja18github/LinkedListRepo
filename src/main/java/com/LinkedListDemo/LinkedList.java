@@ -1,4 +1,4 @@
-package com.LinkedListDemo;
+package com.linkedlistdemo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -104,18 +104,18 @@ public class LinkedList<T> {
 			logger.info("List is empty");
 			return;
 		}
-		//to remove last element of list if list contain more than one element
+		// to remove last element of list if list contain more than one element
 		while (temp != null && tail != null) {
-			//once tail.next becomes null change second last node as tail
+			// once tail.next becomes null change second last node as tail
 			if (tail.next == null) {
 				tail = temp;
-				//remove last element
-				temp.next=null;
+				// remove last element
+				temp.next = null;
 			}
 			tail = tail.next;
 			temp = temp.next;
 		}
-		//if list contains only one element
+		// if list contains only one element
 		if (head.next == null)
 			tail = head;
 		return;
@@ -134,6 +134,24 @@ public class LinkedList<T> {
 			logger.info(temp.data);
 			temp = temp.next;
 		}
+	}
+	// Search given element into Linked List and  returns it's particular index if found  else returns -1
+	public Node<T> search(T data) {
+		Node<T> temp = head;
+		if (head == null) {
+			return head;
+		}
+
+		// While loop is used to search the entire Linked
+		while (temp != null) {
+			// Returns the nod of that particular element,if found.
+			if (temp.data == data) {
+				return temp;
+			}
+			temp = temp.next;
+		}
+		// Returns null if the element is not found
+		return null;
 	}
 
 	// To display the LinkedList

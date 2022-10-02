@@ -1,4 +1,4 @@
-package com.LinkedListDemo;
+package com.linkedlistdemo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,12 +12,13 @@ public class App {
 	public static void main(String[] args) {
 		logger.info("Welcome to implemented LinkedList");
 		MyLinkedList list = new MyLinkedList();
-		list.addData();
+		/*list.addData();
 		list.addDataToTop();
 		list.appendList();
 		list.insertNode();
 		list.popFront();
-		list.deleteFromEnd();
+		list.deleteFromEnd();*/
+		list.searchElement();
 		
 
 	}
