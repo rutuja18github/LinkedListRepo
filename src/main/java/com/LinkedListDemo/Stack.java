@@ -1,10 +1,6 @@
 package com.linkedlistdemo;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 public class Stack<T> {
-	private static final Logger logger = LogManager.getLogger(Stack.class);
 	LinkedList<T> linkedList=new LinkedList<T>();
 	Node<T> top;
 	public Stack() {

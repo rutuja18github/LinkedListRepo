@@ -7,6 +7,7 @@ public class MyLinkedList {
 	private static final Logger logger = LogManager.getLogger(MyLinkedList.class);
 	LinkedList<Integer> listObject;
 	Stack<Integer> stack;
+	 Queue<Integer> queue;
 	// simple list add element
 	public void addData() {
 		listObject = new LinkedList<>();
@@ -121,5 +122,13 @@ public class MyLinkedList {
         logger.info("poping first item from stack");
         stack.pop();
         stack.printStack();
+	}
+	public void implementQueue() {
+		queue=new Queue<>();
+		queue.enqueue(56);
+		queue.enqueue(30);
+		queue.enqueue(70);
+        logger.info("print elements of Queue");
+        queue.printQueue();
 	}
 }

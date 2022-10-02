@@ -12,7 +12,7 @@ public class App {
 	public static void main(String[] args) {
 		logger.info("Welcome to implemented LinkedList");
 		MyLinkedList list = new MyLinkedList();
-		list.addData();
+		/*list.addData();
 		list.addDataToTop();
 		list.appendList();
 		list.insertNode();
@@ -22,6 +22,7 @@ public class App {
 		list.insertAfterElement();
 		list.deleteElement();
 		list.orderdList();
-		list.implementStack();
+		list.implementStack();*/
+		list.implementQueue();
 	}
 }
