@@ -121,6 +121,27 @@ public class LinkedList<T> {
 		return;
 	}
 
+	// Search given element into Linked List and returns it's particular node if
+	// found else returns null
+	public Node<T> search(T data) {
+		Node<T> temp = head;
+		if (head == null) {
+			return null;
+		}
+
+		// While loop is used to search the entire Linked
+		while (temp != null) {
+
+			// Returns the node of that particular element,if found.
+			if (temp.data == data) {
+				return temp;
+			}
+			temp = temp.next;
+		}
+		// Returns null if the element is not found
+		return null;
+	}
+
 	// method will display all the nodes present in the list
 	public void display() {
 		// temp will point to head
@@ -135,27 +156,9 @@ public class LinkedList<T> {
 			temp = temp.next;
 		}
 	}
-	// Search given element into Linked List and  returns it's particular index if found  else returns -1
-	public Node<T> search(T data) {
-		Node<T> temp = head;
-		if (head == null) {
-			return head;
-		}
-
-		// While loop is used to search the entire Linked
-		while (temp != null) {
-			// Returns the nod of that particular element,if found.
-			if (temp.data == data) {
-				return temp;
-			}
-			temp = temp.next;
-		}
-		// Returns null if the element is not found
-		return null;
-	}
 
 	// To display the LinkedList
-	// @Override
+	@Override
 	public String toString() {
 
 		String S = "";

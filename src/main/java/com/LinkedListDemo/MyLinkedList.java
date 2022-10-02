@@ -69,7 +69,7 @@ public class MyLinkedList {
 		listObject.append(30);
 		listObject.append(70);
 		logger.info(listObject);
-		Node<Integer> node = listObject.search(30);
+		Node<Integer> node = listObject.search(80);
 		if (node == null) {
 			logger.info("Element Not Found");
 		} else {
