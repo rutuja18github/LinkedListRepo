@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MyLinkedList {
-	LinkedList<Integer> listObject;
 	private static final Logger logger = LogManager.getLogger(MyLinkedList.class);
-
+	LinkedList<Integer> listObject;
+	Stack<Integer> stack;
 	// simple list add element
 	public void addData() {
 		listObject = new LinkedList<>();
@@ -109,12 +109,17 @@ public class MyLinkedList {
 		logger.info(orderedList);
 	}
 	public void implementStack() {
-		Stack<Integer> stack=new Stack<>();
-        logger.info("initialized stack");
+		stack=new Stack<>();
         stack.push(70);
         stack.push(30);
         stack.push(56);
-        logger.info("printing pushed items in stack");
+        logger.info("printing elements in stack");
+        stack.printStack();
+        logger.info("peeking stack");
+        int top=(int)stack.peek();
+        logger.info("Element at the top of stack "+top);
+        stack.pop();
+        logger.info("poping first item from stack");
         stack.printStack();
 	}
 }

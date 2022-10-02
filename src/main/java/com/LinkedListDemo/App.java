@@ -23,6 +23,5 @@ public class App {
 		list.deleteElement();
 		list.orderdList();
 		list.implementStack();
-
 	}
 }

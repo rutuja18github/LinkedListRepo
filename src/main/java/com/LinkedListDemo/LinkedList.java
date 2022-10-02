@@ -95,7 +95,6 @@ public class LinkedList<T> {
 			temp = null;// delete node
 		}
 	}
-
 	public void popLast() {
 		Node<T> temp = head;
 		Node<T> tail = head.next;
